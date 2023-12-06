@@ -32,7 +32,7 @@ The Currency Converter is a Python program that allows users to convert currency
 1. Run the program by executing the following command:
 
    ```bash
-   python currency_converter.py
+   python Currency_Converter.py
    ```
 
 2. Enter the required information as prompted:
