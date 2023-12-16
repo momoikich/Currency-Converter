@@ -1,6 +1,3 @@
-Certainly! Here's an enhanced description for your Currency Converter project that includes a placeholder for adding an image. Unfortunately, I can't directly embed or attach images, but I'll provide a placeholder where you can manually insert an image in Markdown format. Make sure to replace `![Placeholder Image](path/to/your/image.png)` with the actual path or URL of your image.
-
-```markdown
 # Currency Converter
 
 ## Overview
@@ -17,8 +14,9 @@ The Currency Converter is a Python-based application that simplifies currency co
 
 To use the Currency Converter, ensure that you have the following:
 
-- Python 3.10
+- Python 3.12
 - `requests` library (`pip install requests`)
+- `Gooey` library (`pip install Gooey`)
 - ExchangeRate-API key (Sign up at [ExchangeRate-API](https://www.exchangerate-api.com/) to obtain a key)
 
 ## Installation
@@ -29,6 +27,10 @@ To use the Currency Converter, ensure that you have the following:
    ```bash
    pip install requests
    ```
+   ```bash
+   pip install Gooey
+   ```
+   
 
 3. Replace `"YOUR_EXCHANGE_RATE_API_KEY"` in the code with your actual ExchangeRate-API key.
 
@@ -37,7 +39,7 @@ To use the Currency Converter, ensure that you have the following:
 1. Run the program by executing the following command:
 
    ```bash
-   python currency_converter.py
+   python Currency_Converter.py
    ```
 
 2. Enter the required information as prompted:
@@ -63,5 +65,3 @@ This Currency Converter is built using Python and the `requests` library to inte
 
 Feel free to customize and extend the functionality based on your requirements!
 ```
-
-To include an image, replace `path/to/your/image.png` with the actual path or URL of your image.
