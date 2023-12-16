@@ -1,22 +1,24 @@
 
 # Currency Converter
 
-## Description
+## Overview
 
-The Currency Converter is a Python program designed to facilitate currency conversion using the latest exchange rates. It leverages the ExchangeRate-API to fetch real-time exchange rates and performs conversions based on user input.
+The Currency Converter is a Python-based application that simplifies currency conversion using real-time exchange rates. This project utilizes the ExchangeRate-API to fetch up-to-date exchange rates and performs seamless currency conversions based on user input.
 
-## Features
+## Key Features
 
-- Fetches the latest exchange rates from ExchangeRate-API.
-- Converts currency from one form to another.
-- User-friendly command-line interface.
+- **Real-time Exchange Rates:** Fetches the latest exchange rates from ExchangeRate-API.
+- **Currency Conversion:** Allows users to convert currency from one form to another.
+- **User-Friendly Interface:** Provides an intuitive command-line interface for a smooth user experience.
 
 ## Requirements
 
-- Python 3.12
+To use the Currency Converter, ensure that you have the following:
+
+- Python 3.10
 - `requests` library (`pip install requests`)
 - `Gooey` library (`pip install Gooey`)
-- ExchangeRate-API key (Sign up at https://www.exchangerate-api.com/ to obtain a key)
+- ExchangeRate-API key (Sign up at [ExchangeRate-API](https://www.exchangerate-api.com/) to obtain a key)
 
 ## Installation
 
@@ -29,6 +31,7 @@ The Currency Converter is a Python program designed to facilitate currency conve
    ```bash
    pip install Gooey
    ```
+
 3. Replace `"YOUR_EXCHANGE_RATE_API_KEY"` in the code with your actual ExchangeRate-API key.
 
 ## Usage
@@ -46,6 +49,11 @@ The Currency Converter is a Python program designed to facilitate currency conve
 
 3. The program will fetch the latest exchange rates and display the converted amount.
 
+## Screenshots
+
+<!-- Insert a screenshot or illustration of your application here -->
+![Placeholder Image]("C:\Users\hammi\OneDrive\Images\Captures d’écran\app_currency.png")
+
 ## Notes
 
 - Make sure to sign up on ExchangeRate-API and replace the placeholder API key with your actual key.
@@ -57,5 +65,3 @@ This Currency Converter is built using Python and the `requests` library to inte
 
 Feel free to customize and extend the functionality based on your requirements!
 ```
-
-This readme provides instructions on how to install and use the Currency Converter, along with important information about requirements and customization options.
