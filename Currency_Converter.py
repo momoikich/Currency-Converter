@@ -6,8 +6,10 @@ def currency_converter_gui():
     parser = GooeyParser(description="Currency Converter")
 
     parser.add_argument("amount", type=float, help="Amount to convert")
-    parser.add_argument("from_currency", help="From Currency")
-    parser.add_argument("to_currency", help="To Currency")
+    parser.add_argument(
+        "from_currency", choices=list_currency_codes(), help="From Currency"
+    )
+    parser.add_argument("to_currency", choices=list_currency_codes(), help="To Currency")
 
     args = parser.parse_args()
 
@@ -15,11 +17,25 @@ def currency_converter_gui():
 
     print(f"{args.amount} {args.from_currency} is equal to {result:.2f} {args.to_currency}")
 
-def convert_currency(amount, from_currency, to_currency):
-    api_key = "d0a24575846f6c64de9b32ba"  # Remplacez par votre clé d'API
+def list_currency_codes():
+    api_key = "d0a24575846f6c64de9b32ba"  # Replace with your actual API key
     base_url = "https://open.er-api.com/v6/latest"
 
-    params = {"api_key": api_key, "base": from_currency}
+    response = requests.get(base_url, params={"apikey": api_key})
+
+    if response.status_code == 200:
+        data = response.json()
+        currencies = list(data["rates"].keys())
+        return sorted(currencies)
+    else:
+        print(f"Error: Unable to fetch currency codes. Status Code: {response.status_code}")
+        return []
+
+def convert_currency(amount, from_currency, to_currency):
+    api_key = "d0a24575846f6c64de9b32ba"  # Replace with your actual API key
+    base_url = "https://open.er-api.com/v6/latest"
+
+    params = {"apikey": api_key}
     response = requests.get(base_url, params=params)
 
     if response.status_code == 200:
@@ -35,3 +51,4 @@ def convert_currency(amount, from_currency, to_currency):
 
 if __name__ == "__main__":
     currency_converter_gui()
+
