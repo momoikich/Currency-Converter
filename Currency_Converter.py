@@ -1,47 +1,37 @@
 import requests
+from gooey import Gooey, GooeyParser
 
-class CurrencyConverter:
-    def __init__(self, api_key):
-        self.api_key = api_key
-        self.base_url = "https://open.er-api.com/v6/latest"
+@Gooey
+def currency_converter_gui():
+    parser = GooeyParser(description="Currency Converter")
 
-    def get_exchange_rates(self):
-        try:
-            response = requests.get(f"{self.base_url}?apikey={self.api_key}")
-            data = response.json()
-            return data["rates"]
-        except requests.exceptions.RequestException as e:
-            print(f"Error fetching exchange rates: {e}")
-            return None
+    parser.add_argument("amount", type=float, help="Amount to convert")
+    parser.add_argument("from_currency", help="From Currency")
+    parser.add_argument("to_currency", help="To Currency")
 
-    def convert_currency(self, amount, from_currency, to_currency):
-        rates = self.get_exchange_rates()
+    args = parser.parse_args()
 
-        if rates is not None and from_currency in rates and to_currency in rates:
-            conversion_rate = rates[to_currency] / rates[from_currency]
-            converted_amount = amount * conversion_rate
-            return converted_amount
+    result = convert_currency(args.amount, args.from_currency, args.to_currency)
+
+    print(f"{args.amount} {args.from_currency} is equal to {result:.2f} {args.to_currency}")
+
+def convert_currency(amount, from_currency, to_currency):
+    api_key = "d0a24575846f6c64de9b32ba"  # Remplacez par votre clé d'API
+    base_url = "https://open.er-api.com/v6/latest"
+
+    params = {"api_key": api_key, "base": from_currency}
+    response = requests.get(base_url, params=params)
+
+    if response.status_code == 200:
+        data = response.json()
+        rate = data["rates"].get(to_currency)
+        if rate is not None:
+            result = amount * rate
+            return result
         else:
-            print("Invalid currency codes or unable to fetch exchange rates.")
-            return None
-
-def main():
-    api_key = "YOUR_EXCHANGE_RATE_API_KEY"
-    converter = CurrencyConverter(api_key)
-
-    if api_key == "2f7639c718063dca1324726b":
-        print("Please replace '2f7639c718063dca1324726b' with your actual API key.")
-        return
-
-    print("Welcome to the Currency Converter!")
-    amount = float(input("Enter the amount to convert: "))
-    from_currency = input("Enter the source currency code: ").upper()
-    to_currency = input("Enter the target currency code: ").upper()
-
-    converted_amount = converter.convert_currency(amount, from_currency, to_currency)
-
-    if converted_amount is not None:
-        print(f"{amount} {from_currency} is equal to {converted_amount:.2f} {to_currency}")
+            print(f"Error: Unable to find exchange rate for {to_currency}")
+    else:
+        print(f"Error: Unable to fetch exchange rates. Status Code: {response.status_code}")
 
 if __name__ == "__main__":
-    main()
+    currency_converter_gui()

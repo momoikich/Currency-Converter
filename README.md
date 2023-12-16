@@ -1,8 +1,9 @@
+
 # Currency Converter
 
 ## Description
 
-The Currency Converter is a Python program that allows users to convert currency from one form to another using the latest exchange rates. It utilizes the ExchangeRate-API to fetch real-time exchange rates and performs currency conversion based on user input.
+The Currency Converter is a Python program designed to facilitate currency conversion using the latest exchange rates. It leverages the ExchangeRate-API to fetch real-time exchange rates and performs conversions based on user input.
 
 ## Features
 
@@ -12,8 +13,9 @@ The Currency Converter is a Python program that allows users to convert currency
 
 ## Requirements
 
-- Python 3.10
+- Python 3.12
 - `requests` library (`pip install requests`)
+- `Gooey` library (`pip install Gooey`)
 - ExchangeRate-API key (Sign up at https://www.exchangerate-api.com/ to obtain a key)
 
 ## Installation
@@ -32,7 +34,7 @@ The Currency Converter is a Python program that allows users to convert currency
 1. Run the program by executing the following command:
 
    ```bash
-   python currency_converter.py
+   python Currency_Converter.py
    ```
 
 2. Enter the required information as prompted:
@@ -54,5 +56,4 @@ This Currency Converter is built using Python and the `requests` library to inte
 Feel free to customize and extend the functionality based on your requirements!
 ```
 
-Replace placeholders such as `"YOUR_EXCHANGE_RATE_API_KEY"` with actual details related to your application. Additionally, you can add or modify sections based on your specific requirements.
- 
+This readme provides instructions on how to install and use the Currency Converter, along with important information about requirements and customization options.
