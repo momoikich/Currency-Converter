@@ -48,12 +48,6 @@ To use the Currency Converter, ensure that you have the following:
 
 3. The program will fetch the latest exchange rates and display the converted amount.
 
-## Screenshots
-
-<!-- Insert a screenshot or illustration of your application here -->
-![Currency Converter Screenshot](images/app_currency.png)
-
-
 ## Notes
 
 - Make sure to sign up on ExchangeRate-API and replace the placeholder API key with your actual key.
@@ -66,3 +60,4 @@ This Currency Converter is built using Python and the `requests` library to inte
 Feel free to customize and extend the functionality based on your requirements!
 ```
 
+This readme provides instructions on how to install and use the Currency Converter, along with important information about requirements and customization options.
