@@ -26,7 +26,9 @@ The Currency Converter is a Python program designed to facilitate currency conve
    ```bash
    pip install requests
    ```
-
+   ```bash
+   pip install Gooey
+   ```
 3. Replace `"YOUR_EXCHANGE_RATE_API_KEY"` in the code with your actual ExchangeRate-API key.
 
 ## Usage
