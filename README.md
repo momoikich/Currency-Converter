@@ -52,7 +52,7 @@ To use the Currency Converter, ensure that you have the following:
 ## Screenshots
 
 <!-- Insert a screenshot or illustration of your application here -->
-![Placeholder Image]("C:\Users\hammi\OneDrive\Images\Captures d’écran\app_currency.png")
+![Placeholder Image](C:\Users\hammi\OneDrive\Images\Captures d’écran\app_currency.png)
 
 ## Notes
 
